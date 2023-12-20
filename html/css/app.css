@@ -1,0 +1,157 @@
+@font-face { 
+  font-family: bankgothic; 
+  src: url("../fonts/bankgothic.ttf"); 
+}
+
+body, .menu, 
+.menu.align-bottom-right {
+  overflow: hidden; 
+}
+
+body { 
+  margin: 0px;
+}
+
+.shake2 { 
+  position: fixed; 
+  right: 0px; 
+  height: 100%; 
+}
+
+:root { 
+  --color-primary:#ffffff; 
+  --color-secondary:#cf00a2; 
+  --anim-cubic:cubic-bezier(0, 0.605, 0.145, 1.005); 
+}
+
+.menu { 
+  font-family: bankgothic; 
+  min-width: 310px; 
+  color: rgb(255, 255, 255); 
+  position: absolute; 
+  border-radius: 10px; 
+  padding: 25px 10px 20px; 
+  overflow: visible !important; 
+}
+
+.headtitle { 
+  background-color: black; 
+  width: max-content; 
+  margin-top: 0.5vh; 
+  margin-left: 0.5vh; 
+  padding: 0.5vh; 
+  border-radius: 5px 5px 0px 0px; 
+  text-transform: lowercase; 
+}
+
+.spinner { 
+  animation: 0.7s linear 0s infinite normal none running rotar; 
+  position: absolute; 
+  width: 1.35vw; 
+  top: 0.5vw; 
+  right: 0.3vw; 
+  filter: invert(); 
+}
+
+.headtitle div { 
+  display: none; 
+}
+
+.headtitle span { 
+  text-shadow: none; 
+}
+
+.menu.align-left { 
+  right: 3vh; 
+  bottom: 53vh; 
+}
+
+.menu.align-top-left { 
+  right: 3vh; 
+  bottom: 53vh; 
+}
+
+.menu.align-top { 
+  right: 3vh; 
+  bottom: 53vh; 
+}
+
+.menu.align-top-right { right: 3vh; bottom: 53vh; }
+.align-right .shake { animation: 0s ease 0s 1 normal none running none; }
+.menu.align-right { right: 3vh; bottom: 53vh; }
+.menu.align-bottom-right { right: 3vh; bottom: 53vh; }
+.menu.align-bottom { right: 22vw; bottom: 23vw; }
+.menu.align-bottom-left { right: 3vh; bottom: 53vh; }
+.menu.align-center { right: 3vh; bottom: 53vh; }
+.arrow-left { position: absolute; width: 0px; height: 0px; border-top: 1vw solid transparent; border-bottom: 1vw solid transparent; border-right: 1vw solid white; top: -1.97vw; left: -1.3vw; }
+.menu .head { text-align: left; font-size: 1.1vw; text-shadow: rgb(255, 255, 255) 0px 0px 20px; background: rgb(255, 255, 255); color: rgb(255, 255, 255); margin-bottom: 0px; top: -1.3vh; left: 1.1vh; border-radius: 5px 5px 0px 0px; width: 41vh; padding-top: 0.1vh; border-bottom: 3px solid black; z-index: 5 !important; }
+.abrirMenu .head, .abrirMenu .arrow-left { animation: 0.3s cubic-bezier(0, 0.67, 0.39, 1.01) 0.2s 1 normal forwards running cabecera; opacity: 0; }
+.anim-entrada { animation: 0.2s cubic-bezier(0, 0.67, 0.39, 1.01) 0.1s 1 normal forwards running cabecera; opacity: 0; }
+.menu .menu-items { max-height: 14.7vw; overflow: visible auto; border-radius: 5px; margin: 5px 0px 0px; padding-right: 0.2vw; }
+.bg-items { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65); position: absolute; top: 0px; left: 0px; filter: blur(14px); z-index: -1; }
+.menu .items-container { padding: 0.5vh; position: absolute; background: rgba(0, 0, 0, 0.83); box-shadow: rgba(0, 0, 0, 0.42) 0px 0px 20px; border-radius: 0px 0px 5px 5px; width: 40vh; z-index: 0 !important; }
+.menu .menu-items .menu-item { display: block; height: max-content; line-height: 2vh; text-align: left; font-size: 1.1rem; color: rgb(255, 255, 255); margin: 0px 7px 10px; padding: 0.8vh; transition: all 0.3s ease-in-out 0s; background-color: transparent; border-radius: 5px; font-family: bankgothic; text-transform: lowercase; font-weight: 100 !important; }
+.menu .menu-items .menu-item.selected { color: rgb(0, 0, 0); transform: scale(1.02); transition: all 0.3s ease-in-out 0s; font-weight: 800; background: rgba(255, 255, 255, 0.84); border: 1px solid white; }
+.abrirMenu { animation: 0.3s ease 0s 1 normal forwards running abrirMenu !important; }
+.cerrarMenu { animation: 0.3s ease 0s 1 normal forwards running cerrarMenu !important; }
+::-webkit-scrollbar-track { background-color: rgba(0, 0, 0, 0.22); }
+::-webkit-scrollbar { width: 3px; background-color: rgba(0, 0, 0, 0.184); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-radius: 3px; }
+.botones { position: absolute; right: 5px; }
+.marker { font-weight: bold; display: inline-block; font-size: 1.3vh; transform: translateY(-0.3vh); }
+.selected .marker { animation: 0.5s ease-in-out 0s infinite normal none running marker; }
+@keyframes abrirMenu { 
+  0% { opacity: 0; transform: scale(0.8) rotateY(-40deg); clip-path: circle(20% at 50% 50%); }
+  100% { opacity: 1; transform: scale(1) rotateY(0deg); clip-path: circle(288% at 50% 50%); }
+}
+@keyframes cerrarMenu { 
+  0% { opacity: 1; transform: scale(1) rotateY(0deg); clip-path: circle(288% at 50% 50%); }
+  100% { opacity: 0; transform: scale(0.8) rotateY(-40deg); clip-path: circle(20% at 50% 50%); }
+}
+@keyframes glitchy { 
+  0% { background-color: rgba(0, 0, 0, 0); transform: translate(-2px, 2px); }
+  25% { transform: translate(-2px, -2px); }
+  50% { transform: translate(2px, 2px); }
+  75% { transform: translate(2px, -2px); }
+  100% { transform: translate(-2px, 2px); background-color: white; }
+}
+@keyframes cabecera { 
+  0% { opacity: 0; transform: translate(-50px, 0px); }
+  100% { opacity: 100; transform: translate(0px, 0px); }
+}
+.shake { box-shadow: rgba(0, 0, 0, 0.41) 0px 0px 60px; display: block !important; }
+@keyframes shake-slow { 
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  15% { transform: translate(0px, 3px) rotate(-0.3deg); }
+  30% { transform: translate(0px, -3px) rotate(0.5deg); }
+  45% { transform: translate(0px, 3px) rotate(-0.5deg); }
+  62% { transform: translate(0px, -3px) rotate(0.5deg); }
+  79% { transform: translate(0px, 3px) rotate(0deg); }
+  98% { transform: translate(0px, -3px) rotate(0deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+@keyframes head { 
+  0% { opacity: 0; clip: rect(-3vw, 0vw, 3vw, -3vw); }
+  100% { opacity: 100; clip: rect(-3vw, 20vw, 3vw, -3vw); }
+}
+@keyframes menu-items { 
+  0% { opacity: 0; clip: rect(-3vw, 20vw, 0vw, -3vw); }
+  100% { opacity: 100; clip: rect(-3vw, 20vw, 20vw, -3vw); }
+}
+@keyframes marker { 
+  0% { transform: translateX(-3px) translateY(-0.3vh); }
+  50% { transform: translateX(3px) translateY(-0.3vh); }
+  100% { transform: translateX(-3px) translateY(-0.3vh); }
+}
+@keyframes rotar { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes gradiente { 
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-height: 720px) {
+  .menu.align-right { right: 22vw !important; }
+}
