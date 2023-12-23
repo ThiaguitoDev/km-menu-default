@@ -7,6 +7,20 @@ Menu default to QB-Core
 Add to qb-core/client to wrapper.lua file
 Add to qb-core to import.lua file
 
+## ADD IN FXManifest QB-CORE
+
+```
+    shared_scripts {
+    'config.lua',
+    'import.lua', -- ADD
+    }
+
+    client_scripts {
+    'client/drawtext.lua',
+    'client/wrapper.lua' -- ADD
+}
+```
+
 ## Add in initial code qb-core/client/functions.lua
 
 ```
@@ -296,18 +310,4 @@ Add to qb-core to import.lua file
     QBCore.UI.Menu.IsOpen = function(type, namespace, name)
         return QBCore.UI.Menu.GetOpened(type, namespace, name) ~= nil
     end
-```
-
-## ADD IN FXManifest QB-CORE
-
-```
-    shared_scripts {
-    'config.lua',
-    'import.lua', -- ADD
-    }
-
-    client_scripts {
-    'client/drawtext.lua',
-    'client/wrapper.lua' -- ADD
-}
 ```
