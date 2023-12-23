@@ -297,3 +297,17 @@ Add to qb-core to import.lua file
         return QBCore.UI.Menu.GetOpened(type, namespace, name) ~= nil
     end
 ```
+
+## ADD IN FXManifest QB-CORE
+
+```
+    shared_scripts {
+    'config.lua',
+    'import.lua', -- ADD
+    }
+
+    client_scripts {
+    'client/drawtext.lua',
+    'client/wrapper.lua' -- ADD
+}
+```
